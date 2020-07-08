@@ -23,7 +23,5 @@ Vue.component('panduan-web', require('./components/Panduan.vue').default);
 const app = new Vue({
     store,
     el: '#app',
-    
-   
       
 });

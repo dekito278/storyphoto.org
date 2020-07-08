@@ -6,11 +6,6 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
-    <title>{{ config('app.name', 'StoryPhoto') }}</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>
     <script src="{{ asset('js/jquery.slim.min.js') }}" defer></script>
     <!-- Fonts -->
@@ -23,15 +18,13 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/all.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
-    
-</head>
+    <link href="{{ asset('css/login.css') }}" rel="stylesheet"></head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'StoryPhoto') }}
+                    {{ config('app.name', 'Storyphoto') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -56,26 +49,29 @@
                                 </li>
                             @endif
                         @else
-                        
                         <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('home') }}">{{ __('Pameran') }}</a>
-                                </li>
-                        <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('create_post') }}">{{ __('Buat Pameran') }}</a>
-                                </li>
-                       
-                        
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
+                            <a class="nav-link" href="{{ route('home') }}">{{ __('Pameran') }}</a>
+                        </li>
+                <li class="nav-item">
+                            <a class="nav-link" href="{{ route('create_post') }}">{{ __('Buat Pameran') }}</a>
+                        </li>
+                        <li>
+                            
+                    <a class="nav-link" href="#" role="button" >
+                     @if(auth()->user()->photo)
+                    <img src="{{ auth()->user()->photo }}" alt="photo" width="32" height="32" style="margin-right: 8px;">
+                     @endif
+                    {{ auth()->user()->name }} <span class="caret"></span>
+                            </a>
+                        </li>
+                                
+                                
+                                <a class="nav-link" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                              document.getElementById('logout-form').submit();">
+                                 {{ __('Logout') }}
+                             </a>
+                                   
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
@@ -92,13 +88,10 @@
             @yield('content')
         </main>
     </div>
-        <footer>
-            <div class="footer-copyright text-center py-3">©2020 
-              <a href="https://storyphoto.org/"> storyphoto.org </a>
-            </div>
-          </footer>
-    </body>
-
-    
-
-  </html>
+    <footer>
+        <div class="footer-copyright text-center py-3">©2020 
+          <a href="https://storyphoto.org/"> storyphoto.org </a>
+        </div>
+      </footer>
+</body>
+</html>

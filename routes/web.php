@@ -16,7 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('Panduan', 'ContactController@Panduan')->name('Panduan');
-
+Route::get('redirect/{driver}', 'Auth\LoginController@redirectToProvider')->name('login.provider');
+Route::get('{driver}/callback', 'Auth\LoginController@handleProviderCallback')->name('login.callback');
 Route::get('About', 'ContactController@About')->name('About');
 
 Auth::routes();
@@ -24,6 +25,7 @@ Auth::routes();
 Route::group(['middleware' => 'auth', 'prefix' => 'post'], function () {
     Route::get('get_all', 'PostController@getAllPosts')->name('fetch_all');
     Route::post('/create_post', 'PostController@createPost')->name('create_post');
+    
 });
 
 Route::get('post/create_post', function () {
@@ -31,6 +33,11 @@ Route::get('post/create_post', function () {
 });
 
 Route::get('/Config', 'ConfigController@index');
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 

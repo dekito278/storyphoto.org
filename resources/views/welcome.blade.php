@@ -100,51 +100,7 @@
             .m-b-md {
                 margin-bottom: 30px;
             }    
-        /* Aylen */
-        .button.button--aylen {
-            
-            color: #37474f;
-            overflow: hidden;
-            -webkit-transition: color 0.3s;
-            transition: color 0.3s;
-        }
-        .button--aylen.button--inverted {
-            background: none;
-            
-        }
-        .button--aylen::before,
-        .button--aylen::after {
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            bottom: 100%;
-            left: 0;
-            z-index: -1;
-            -webkit-transition: -webkit-transform 0.3s;
-            transition: transform 0.3s;
-            -webkit-transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
-            transition-timing-function: cubic-bezier(0.75, 0, 0.125, 1);
-        }
-        .button--aylen::before {
-            background: #7986cb;
-        }
-        .button--aylen::after {
-            background: #fff;
-        }
-        .button--aylen:hover {
-            color: ##3f51b5;
-        }
-        .button--aylen:hover::before,
-        .button--aylen:hover::after {
-            -webkit-transform: translate3d(0, 100%, 0);
-            transform: translate3d(0, 100%, 0);
-        }
-        .button--aylen:hover::after {
-            -webkit-transition-delay: 0.175s;
-            transition-delay: 0.175s;
-        }
-
+      
     </style>
     <body>
         
@@ -152,15 +108,15 @@
             @if (Route::has('login'))
             <div class="top-right links">
                 @auth
-                <a class="button button--aylen button--round-l button--text-thick" href="{{ url('/home') }}"role="button">Home</a>
+                <a  href="{{ url('/home') }}"role="button">Home</a>
                 {{-- <a href="{{ url('/home') }}">Home</a> --}}
                 @else
 
                 {{-- <a class="btn btn-primary btn-sm" href="{{ route('login') }}" role="button" >Login</a> --}}
-                <a class="button button--aylen button--round-1 button--text-thick" href="{{ route('login') }}" role="button">Login</a>
+                <a  href="{{ route('login') }}" role="button">Login</a>
                 @if (Route::has('register'))
                 {{-- <a class="btn btn-primary btn-sm" href="{{ route('register') }}" role="button">Register</a> --}}
-                <a class="button button--aylen button--round-1 button--text-thick" href="{{ route('register') }}" role="button">register</a>
+                <a  href="{{ route('register') }}" role="button">register</a>
                 @endif
                 @endauth
             </div>

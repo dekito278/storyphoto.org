@@ -1,4 +1,4 @@
-
+@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.4.1 (https://getbootstrap.com/)
@@ -25067,16 +25067,3 @@ input[type=color].form-control:disabled {
   vertical-align: text-bottom;
 }
 
-html, body{ height:100%; margin:0; }
-header{ height:50px; }
-footer{ height:50px; }
-
-/* Trick */
-body{ 
-  display:flex; 
-  flex-direction:column; 
-}
-
-footer{
-  margin-top:auto; 
-}
