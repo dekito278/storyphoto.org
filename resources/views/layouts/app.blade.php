@@ -11,13 +11,20 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <script src="{{ asset('js/bootstrap.bundle.min.js') }}" defer></script>
+    <script src="{{ asset('js/jquery.slim.min.js') }}" defer></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Heebo:400,700|Oxygen:700" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/style.css">
+    
    
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/all.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/login.css') }}" rel="stylesheet">
+    
 </head>
 <body>
     <div id="app">
@@ -85,8 +92,13 @@
             @yield('content')
         </main>
     </div>
-    <footer class="row">
+        <footer>
+            <div class="footer-copyright text-center py-3">©2020 
+              <a href="https://storyphoto.org/"> storyphoto.org </a>
+            </div>
+          </footer>
+    </body>
+
     
-    </footer>
-</body>
-</html>
+
+  </html>

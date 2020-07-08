@@ -5,6 +5,5 @@
         <div>
             <panduan-web/>
         </div>
-        
 </div>
 @endsection

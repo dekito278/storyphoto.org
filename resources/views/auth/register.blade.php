@@ -2,16 +2,17 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-5">
-            <div class="card">
-
-                <div class="card-body mt-3">
-                    <form method="POST" action="{{ route('register') }}">
+    <div class="row ">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+              <div class="card-body">
+                <h5 class="card-title text-center">Register</h5>
+                
+                    <form  class="form-signin" method="POST" action="{{ route('register') }}">
                         @csrf
 
-                        <div class="form-group row">
-                            <div class="col-md-12">
+                        <div class="form-label-group">
+                            
                                 <input placeholder="FullName" id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
@@ -19,12 +20,13 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                            
+                            <label for="name">Full name</label>
                         </div>
 
-                        <div class="form-group row">
+                        <div class="form-label-group">
 
-                            <div class="col-md-12">
+                            
                                 <input placeholder="Email Address" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                 @error('email')
@@ -32,11 +34,11 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                                <label for="email">Email Address</label>
                         </div>
 
-                        <div class="form-group row">
-                            <div class="col-md-12">
+                        <div class="form-label-group">
+                            
                                 <input placeholder="Password" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
                                 @error('password')
@@ -44,22 +46,21 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-                            </div>
+                                <label for="password">Password</label>
                         </div>
 
-                        <div class="form-group row">
-                            <div class="col-md-12">
+                        <div class="form-label-group">
+                            
                                 <input placeholder="Confirm Password" id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
+                                <label for="password-confirm">Confirm password</label>
                         </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                        
+                                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
-                            </div>
-                        </div>
+                            
+                        
                     </form>
                 </div>
             </div>

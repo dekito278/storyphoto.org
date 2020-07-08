@@ -14,7 +14,7 @@ Vue.use(rate)
 Vue.use(ElementUI);
 
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+
 Vue.component('create-post', require('./components/CreatePost.vue').default);
 Vue.component('all-posts', require('./components/AllPosts.vue').default);
 Vue.component('about-web', require('./components/About.vue').default);
@@ -24,18 +24,6 @@ const app = new Vue({
     store,
     el: '#app',
     
-    data: {
-        rate: ''
-  },
-  mounted() {
-    if (localStorage.rate) {
-      this.rate = localStorage.rate;
-    }
-  },
-  watch: {
-    rate(rateBaru) {
-      localStorage.name = rateBaru;
-    }
-  }
+   
       
 });
